@@ -6,5 +6,5 @@
   };
 </script>
 <template>
-  <div>Welcome to my Vue app!</div>
+  <div class="bg-gray-100 rounded-xl p-8">Welcome to my Vue app!</div>
 </template>

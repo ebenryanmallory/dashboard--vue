@@ -1,10 +1,12 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 export default {
   mount: {
-
+    public: {url: '/', static: true},
+    src: {url: '/dist'},
   },
   plugins: [
-    '@snowpack/plugin-vue'
+    '@snowpack/plugin-vue',
+    '@snowpack/plugin-postcss'
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
@@ -18,7 +20,7 @@ export default {
     /* ... */
   },
   devOptions: {
-    /* ... */
+    tailwindConfig: './tailwind.config.js'
   },
   buildOptions: {
     /* ... */
