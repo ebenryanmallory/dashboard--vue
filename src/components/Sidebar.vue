@@ -20,7 +20,7 @@
                         bg-transparent rounded border border-solid 
                         border-transparent"
                         type="button"
-                        v-on:click="toggleEntertainment('bg-white m-2 py-3 px-6')">
+                        @click="toggleEntertainment('bg-white m-2 py-3 px-6')">
                         Entertainment
                     </button>
                 </li>
@@ -34,8 +34,8 @@
         name: "Sidebar",
         data() {
             return {
-                toggleNewsClasses: "hidden",
-                toggleEntertainmentClasses: "hidden",
+                toggleNewsClasses: "",
+                toggleEntertainmentClasses: "",
             };
         },
         methods: {
@@ -43,7 +43,7 @@
                this.$emit('toggleNews', classes);
             },
             toggleEntertainment: function (classes) {
-               this.toggleEntertainmentClasses = classes;
+               this.$emit('toggleEntertainment', classes);
             }
         }
     };

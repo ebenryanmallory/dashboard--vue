@@ -28,8 +28,12 @@
 <template>
   <div class="bg-gray-100 rounded-xl p-8 text-center">
     <sidebar @toggleNews="toggleNews" />
-    <p v-bind:class="toggleNewsClasses">Dashboard</p>
-    <news v-bind:class="toggleNewsClasses" />
-    <!-- <entertainment v-bind:class="toggleEntertainmentClasses" /> -->
+    <p>Dashboard</p>
+    <div v-bind:class="toggleNewsClasses">
+      <news />
+    </div>
+    <div v-bind:class="toggleEntertainmentClasses">
+      <entertainment />
+    </div>
   </div>
 </template>
