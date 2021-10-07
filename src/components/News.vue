@@ -16,7 +16,7 @@ import { defineAsyncComponent } from 'vue'
 
 export default {
   components: {
-    TodoList: defineAsyncComponent(() => import('./TodoList.vue'))
+    TodoList: defineAsyncComponent(() => import('../services/HN.vue'))
   }
 }
 </script>
