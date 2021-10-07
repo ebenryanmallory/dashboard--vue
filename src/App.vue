@@ -1,10 +1,19 @@
 <script>
+  import Dashboard from './dashboard/Dashboard.vue'
+  import Sidebar from './components/Sidebar.vue'
   export default {
     setup() {
       return {};
     },
+    components: {
+      Dashboard,
+      Sidebar
+    }
   };
 </script>
 <template>
-  <div class="bg-gray-100 rounded-xl p-8">Welcome to my Vue app!</div>
+  <div>
+    <sidebar />
+    <dashboard />
+  </div>
 </template>
