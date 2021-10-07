@@ -6,7 +6,8 @@ export default {
   },
   plugins: [
     '@snowpack/plugin-vue',
-    '@snowpack/plugin-postcss'
+    '@snowpack/plugin-postcss',
+    '@snowpack/plugin-dotenv'
   ],
   routes: [
     /* Enable an SPA Fallback in development: */

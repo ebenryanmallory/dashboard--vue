@@ -1,7 +1,7 @@
 <template>
   <suspense>
     <template #default>
-      <todo-list />
+      <movies-db />
     </template>
     <template #fallback>
       <div>
@@ -16,7 +16,7 @@ import { defineAsyncComponent } from 'vue'
 
 export default {
   components: {
-    TodoList: defineAsyncComponent(() => import('../services/TodoList.vue'))
+    MoviesDb: defineAsyncComponent(() => import('../services/MovieDB.vue'))
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <suspense>
     <template #default>
-      <todo-list />
+      <hacker-news />
     </template>
     <template #fallback>
       <div>
@@ -16,7 +16,7 @@ import { defineAsyncComponent } from 'vue'
 
 export default {
   components: {
-    TodoList: defineAsyncComponent(() => import('../services/HN.vue'))
+    HackerNews: defineAsyncComponent(() => import('../services/HN.vue'))
   }
 }
 </script>

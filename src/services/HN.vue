@@ -13,6 +13,7 @@
 export default {
   async setup() {
     const urlBase = 'https://hacker-news.firebaseio.com/v0';
+    // topstories, newstories, beststories
     const response_list = await fetch(`${urlBase}/newstories.json`); // returns list (array)
     const newHN = await response_list.json();
     let id = newHN[0]; // just using one article (newest)
