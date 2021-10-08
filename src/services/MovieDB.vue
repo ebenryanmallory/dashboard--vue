@@ -1,6 +1,12 @@
 <template>
   <ul>
-    <li :key="movies.id"> {{ movies.title }} </li>
+    <li> 
+      <p :key="movies.id">{{ movies.title }}</p>
+      <img :v-bind="movies.backdrop_path" />
+      <img v-bind:src="baseImageURL + movies.poster_path" style="width:100%;" alt="" />
+    </li>
+    <li :key="movies.id"> {{ movies.overview }} </li>
+    <li :key="movies.id"> {{ movies.homepage }} </li>
   </ul>
 </template>
 
@@ -8,9 +14,17 @@
 export default {
     async setup() {
       const tmdb_api_key = import.meta.env.TMDB_API_KEY;
-      const response_movies = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${tmdb_api_key}`);
+      const baseURL = 'https://api.themoviedb.org/3';
+      const response_list = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc&api_key=${tmdb_api_key}`);
+      const movielist = await response_list.json();
+      // Use only first result 
+      let exampleID = movielist.results[0].id;
+      const response_movies = await fetch(`${baseURL}/movie/${exampleID}?api_key=${tmdb_api_key}`);
       const movies = await response_movies.json();
       return { movies };
+    },
+    data() {
+      return { baseImageURL: 'https://www.themoviedb.org/t/p/w440_and_h660_face/' }
     }
 }
 </script>
