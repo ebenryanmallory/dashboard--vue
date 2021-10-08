@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li :key="todo.id"> {{ todo }} </li>
+    <li :key="movies.id"> {{ movies.title }} </li>
   </ul>
 </template>
 
@@ -8,10 +8,9 @@
 export default {
     async setup() {
       const tmdb_api_key = import.meta.env.TMDB_API_KEY;
-      console.log(tmdb_api_key)
-      const response_todo = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${tmdb_api_key}`);
-      const todos = await response_todo.json();
-      return { todos };
+      const response_movies = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${tmdb_api_key}`);
+      const movies = await response_movies.json();
+      return { movies };
     }
 }
 </script>
