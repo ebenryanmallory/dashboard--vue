@@ -1,15 +1,17 @@
 <template>
   <ul>
-    <li v-for="todo in todos" :key="todo.id"> {{ todo }} | in todo fields</li>
+    <li :key="todo.id"> {{ todo }} </li>
   </ul>
 </template>
 
 <script>
 export default {
     async setup() {
-    const response_todo = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-    const todos = await response_todo.json();
-    return { todos };
-  }
+      const tmdb_api_key = import.meta.env.TMDB_API_KEY;
+      console.log(tmdb_api_key)
+      const response_todo = await fetch(`https://api.themoviedb.org/3/movie/550?api_key=${tmdb_api_key}`);
+      const todos = await response_todo.json();
+      return { todos };
+    }
 }
 </script>
