@@ -1,12 +1,16 @@
 <template>
-  <section class="">
+  <section class="bg-gray-100 p-4">
     <ul>
-      <li> 
-        <p :key="movies.id" class="text-bold">{{ movies.title }}</p>
-        <img v-bind:src="baseImageURL + movies.poster_path" class="max-w-half max-h-96" alt="dynamic movie poster" />
+      <li>
+        <div class="flex">
+          <img v-bind:src="baseImageURL + movies.poster_path" class="max-w-half max-h-96 mr-2" alt="dynamic movie poster" />
+          <div class="flex flex-column column">
+            <h5 :key="movies.id" class="text-bold text-xl mb-2">{{ movies.title }}</h5>
+            <p class="mb-2"> {{ movies.overview }} </p>
+            <p>Visit <a v-bind:href="movies.homepage">Movie home</a></p>
+          </div>
+        </div>
       </li>
-      <li :key="movies.id"> {{ movies.overview }} </li>
-      <li :key="movies.id"> {{ movies.homepage }} </li>
     </ul>
   </section>
 </template>
@@ -29,3 +33,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+  .column {
+    flex-direction: column;
+  }
+</style>
