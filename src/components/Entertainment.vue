@@ -16,7 +16,7 @@ import { defineAsyncComponent } from 'vue'
 
 export default {
   components: {
-    MoviesDb: defineAsyncComponent(() => import('../services/MovieDB.vue'))
+    MoviesDb: defineAsyncComponent(() => import('../external-api/MovieDB.vue'))
   }
 }
 </script>

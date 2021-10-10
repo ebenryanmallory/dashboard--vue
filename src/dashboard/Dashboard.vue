@@ -1,4 +1,5 @@
 <script>
+    import Topbar from '../components/Topbar.vue'
     import Sidebar from '../components/Sidebar.vue'
     import News from '../components/News.vue'
     import Entertainment from '../components/Entertainment.vue'
@@ -10,6 +11,7 @@
         };
       },
       components: {
+        Topbar,
         Sidebar,
         News,
         Entertainment
@@ -27,8 +29,8 @@
 
 <template>
   <div class="bg-gray-100 rounded-xl p-8 text-center">
+    <topbar />
     <sidebar @toggleNews="toggleNews" />
-    <p>Dashboard</p>
     <div v-bind:class="toggleNewsClasses">
       <news />
     </div>

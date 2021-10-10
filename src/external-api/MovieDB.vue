@@ -2,8 +2,7 @@
   <ul>
     <li> 
       <p :key="movies.id">{{ movies.title }}</p>
-      <img :v-bind="movies.backdrop_path" />
-      <img v-bind:src="baseImageURL + movies.poster_path" style="width:100%;" alt="" />
+      <img v-bind:src="baseImageURL + movies.poster_path" class="w-full max-w-400" alt="" />
     </li>
     <li :key="movies.id"> {{ movies.overview }} </li>
     <li :key="movies.id"> {{ movies.homepage }} </li>

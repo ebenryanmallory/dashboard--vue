@@ -16,7 +16,7 @@ import { defineAsyncComponent } from 'vue'
 
 export default {
   components: {
-    HackerNews: defineAsyncComponent(() => import('../services/HN.vue'))
+    HackerNews: defineAsyncComponent(() => import('../external-api/HN.vue'))
   }
 }
 </script>
