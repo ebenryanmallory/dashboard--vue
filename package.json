@@ -14,6 +14,7 @@
     "tailwindcss": "^2.2.16"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.24.0",
     "vue": "^3.0.0",
     "vuex": "^4.0.2"
   }
