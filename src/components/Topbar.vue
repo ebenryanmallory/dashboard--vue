@@ -1,5 +1,5 @@
 <template>
-    <div class="container fixed p-4" style="top: 0;">
+    <div class="w-full absolute p-4 text-white" style="top: 0; background: #424242;">
         Topbar
     </div>
 </template>
