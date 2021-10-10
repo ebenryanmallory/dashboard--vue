@@ -1,12 +1,14 @@
 <template>
-  <ul>
-    <li> 
-      <p :key="movies.id">{{ movies.title }}</p>
-      <img v-bind:src="baseImageURL + movies.poster_path" class="w-full max-w-400" alt="" />
-    </li>
-    <li :key="movies.id"> {{ movies.overview }} </li>
-    <li :key="movies.id"> {{ movies.homepage }} </li>
-  </ul>
+  <section class="">
+    <ul>
+      <li> 
+        <p :key="movies.id" class="text-bold">{{ movies.title }}</p>
+        <img v-bind:src="baseImageURL + movies.poster_path" class="max-w-half max-h-96" alt="dynamic movie poster" />
+      </li>
+      <li :key="movies.id"> {{ movies.overview }} </li>
+      <li :key="movies.id"> {{ movies.homepage }} </li>
+    </ul>
+  </section>
 </template>
 
 <script>

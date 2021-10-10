@@ -15,6 +15,6 @@
         top: 0; 
         background: #424242;
         margin-left: 225px;
-        width: calc(100vw - 225px);
+        width: calc(100vw - 260px);
     }
 </style>

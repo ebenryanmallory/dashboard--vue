@@ -1,12 +1,14 @@
 <template>
-  <div class="container">
-    <p class="font-bold text-center uppercase">New Hacker News Stories</p>
-    <ul>
-      <li :key="HN_article.id"> {{ HN_article.title }}
-        <a href="{{HN_article.url}}" :key="HN_article.id"> {{ HN_article.url }} </a>
-      </li>
-    </ul>
-  </div>
+  <section class="bg-gray-100 p-4">
+    <div class="container">
+      <p class="font-bold text-center uppercase">New Hacker News Stories</p>
+      <ul>
+        <li :key="HN_article.id"> {{ HN_article.title }}
+          <a href="{{HN_article.url}}" :key="HN_article.id"> {{ HN_article.url }} </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 </template>
 
 <script>

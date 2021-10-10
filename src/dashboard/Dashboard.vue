@@ -28,7 +28,8 @@
 </script>
 
 <template>
-  <div class="bg-gray-100 rounded-xl p-8 text-center">
+  <div class="p-8">
+    <div class="absolute bg-purple-500 h-96 w-full top-color"></div>
     <topbar />
     <sidebar @toggleNews="toggleNews" />
     <div v-bind:class="toggleNewsClasses" class="content-margin">
@@ -43,5 +44,8 @@
 <style scoped>
 .content-margin {
   margin: 40px 0px 0px 255px;
+}
+.top-color {
+  z-index: -1;
 }
 </style>
