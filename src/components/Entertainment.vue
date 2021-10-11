@@ -21,3 +21,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .loading {
+    min-height: 265px;
+  }
+</style>

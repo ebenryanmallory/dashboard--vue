@@ -1,3 +1,10 @@
+const fs = require('fs')
+
+require('dotenv').config()
+
+const snowpack = './snowpack.config.mjs';
+
+const fileText = `
 /** @type {import("snowpack").SnowpackUserConfig } */
 export default {
   mount: {
@@ -24,5 +31,17 @@ export default {
   },
   buildOptions: {
     /* ... */
+  },
+  env: {
+    SUPABASE_URL: '${process.env.SUPABASE_URL}',
+    SUPABASE_ANON_KEY: '${process.env.SUPABASE_ANON_KEY}'
   }
 };
+`
+fs.writeFile(snowpack, fileText, err => {
+    if (err) {
+        console.error(err)
+        return
+    }
+    console.log('Config file complete')
+})

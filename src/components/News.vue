@@ -24,6 +24,6 @@ export default {
 
 <style scoped>
   .loading {
-    height: 265px;
+    min-height: 265px;
   }
 </style>
