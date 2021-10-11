@@ -2,10 +2,12 @@
   <section class="bg-gray-100 p-4">
     <ul>
       <li>
-        <div class="flex">
-          <img v-bind:src="baseImageURL + movies.poster_path" class="max-w-half max-h-96 mr-4" alt="dynamic movie poster" />
+        <div class="flex" :key="movies.id">
+          <img v-bind:src="baseImageURL + movies.poster_path" 
+            class="max-w-half max-h-96 mr-4" 
+            alt="dynamic movie poster" />
           <div class="flex flex-column column">
-            <h5 :key="movies.id" class="text-bold text-xl mb-2 inter">{{ movies.title }}</h5>
+            <h5 class="text-bold text-xl mb-2 inter">{{ movies.title }}</h5>
             <p class="mb-2"> {{ movies.overview }} </p>
             <p>Visit <a v-bind:href="movies.homepage" target="_blank">movie home</a></p>
           </div>
