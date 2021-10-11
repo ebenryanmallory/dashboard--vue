@@ -3,9 +3,9 @@
     <div class="container">
       <p class="font-bold text-center uppercase inter">Hacker News Stories</p>
       <ul>
-        <li v-for="(item, index) in items" :key="index">
-          <p class="inter">{{ item.title }}</p>
-          <a v-bind:href="item.url" target="_blank">Read more</a>
+        <li v-for="(article, index) in articles" :key="index">
+          <p class="inter">{{ article.title }}</p>
+          <a v-bind:href="article.url" target="_blank">Read more</a>
         </li>
       </ul>
     </div>
@@ -27,7 +27,7 @@ export default {
         return HN_article;
       })
     );
-    return { items: stories };
+    return { articles: stories };
   }
 }
 </script>
