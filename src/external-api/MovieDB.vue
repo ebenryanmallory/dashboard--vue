@@ -39,7 +39,6 @@
         }
       );
       const movielist = await response_list.json();
-      console.log( { movies: movielist.results.slice(0, 5) } )
       return { movies: movielist.results.slice(0, 5) };
     },
     data() {

@@ -19,7 +19,7 @@ Your app is ready to be deployed!
 
 ### npm createConfig
 
-Using NodeJS, this file will create a snowpack.config.mjs file for you that has necessary settings to run snowpack and the build and start commands for local dev. It also serves as a place to store and use environmental variables (in Vue with Snowpack, using import.meta.env). This build step omits the environmental variables from a git repo since .env files will be ignored, and gets the variables from Netlify. Local dev uses your .env file and Netlify uses the internal environmental variables which you can enter in the UI.
+Using NodeJS, this file will create a snowpack.config.mjs file for you that has necessary settings to run snowpack and the build and start commands for local dev. It also serves as a place to provide environmental variables in Snowpack. This build step omits the environmental variables from a git repo since .env files will be ignored, but still allows their use in Netlify builds. Local dev uses your .env file and Netlify will pull in your custom variables you enter.
 
 ### npm netlify
 
