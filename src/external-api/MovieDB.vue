@@ -2,14 +2,14 @@
   <section class="bg-gray-100 p-4">
     <ul>
       <li>
-        <div class="flex" v-for="item in items" :key="item.id">
-          <img v-bind:src="baseImageURL + item.poster_path" 
+        <div class="flex my-4" v-for="movie in movies" :key="movie.id">
+          <img v-bind:src="baseImageURL + movie.poster_path" 
             class="max-w-half max-h-96 mr-4" 
             alt="dynamic movie poster" />
           <div class="flex flex-column column">
-            <h5 class="text-bold text-xl mb-2 inter">{{ item.title }}</h5>
-            <p class="mb-2"> {{ item.overview }} </p>
-            <p>Visit <a v-bind:href="item.homepage" target="_blank">movie home</a></p>
+            <h5 class="text-bold text-xl mb-2 inter">{{ movie.title }}</h5>
+            <p class="mb-2"> {{ movie.overview }} </p>
+            <p>Visit <a v-bind:href="movie.homepage" target="_blank">movie home</a></p>
           </div>
         </div>
       </li>
@@ -20,15 +20,17 @@
 <script>
 export default {
     async setup() {
-      const tmdb_api_key = import.meta.env.TMDB_API_KEY;
-      const baseURL = 'https://api.themoviedb.org/3';
-      const response_list = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc&api_key=${tmdb_api_key}`);
+      const baseURL = 'https://api.themoviedb.org/4';
+      const response_list = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc`,
+        {
+          headers: {
+            'Authorization': `Bearer ${process.env.TMDB_TOKEN}`,
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+        }
+      );
       const movielist = await response_list.json();
-      // Use only first result 
-      // let exampleID = movielist.results[0].id;
-      // const response_movies = await fetch(`${baseURL}/movie/${exampleID}?api_key=${tmdb_api_key}`);
-      // const movies = await response_movies.json();
-      return { items: movielist.results };
+      return { movies: movielist.results.slice(0, 5) };
     },
     data() {
       return { baseImageURL: 'https://www.themoviedb.org/t/p/w440_and_h660_face/' }

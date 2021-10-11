@@ -4,8 +4,9 @@
       <hacker-news />
     </template>
     <template #fallback>
-      <div>
-        Loading...
+      <div class="flex w-full">
+        <div class="loading bg-gray-100 w-half"></div>
+        <div class="loading bg-gray-100 w-half"></div>
       </div>
     </template>
   </suspense>
@@ -20,3 +21,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .loading {
+    height: 265px;
+  }
+</style>

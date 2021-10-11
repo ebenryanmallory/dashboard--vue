@@ -1,11 +1,12 @@
 <template>
     <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
         <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
-            <p class="font-bold text-center uppercase">News & Entertainment</p>
+            <p class="font-bold text-center uppercase inter">News & Entertainment</p>
+            <p>Yep, all you really need in life is right here. Enjoy.</p>
             <hr />
             <ul class="items-center flex flex-wrap list-none">
                 <li class="inline-block relative w-full">
-                    <button class="cursor-pointer w-full my-2 text-yellow-500
+                    <button class="cursor-pointer w-full my-2 hn
                         px-4 py-3 leading-none bg-transparent flex 
                         items-center justify-center rounded-md border border-gray-300"
                         type="button"
@@ -15,7 +16,7 @@
                     </button>
                 </li>
                 <li class="inline-block relative w-full">
-                    <button class="cursor-pointer w-full my-2 text-purple-600
+                    <button class="cursor-pointer w-full my-2 tmdb
                         px-4 py-3 leading-none bg-transparent flex 
                         items-center justify-center rounded-md border border-gray-300"
                         type="button"
@@ -47,3 +48,15 @@
         }
     };
 </script>
+
+<style scoped>
+  .inter {
+    font-family: 'Inter'
+  }
+  .hn {
+    color: #ff6600
+  }
+  .tmdb {
+    color: #0fb6df
+  }
+</style>
