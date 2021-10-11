@@ -19,18 +19,18 @@ Your app is ready to be deployed!
 
 ### npm createConfig
 
-Using NodeJS, this file will create a snowpack.config.mjs file for you that has necessary settings to run snowpack and the build and start commands for local dev. It also serves as a place to store and use environmental variables (in Vue with Snowpack, using import.meta.env). This build step omits the environmental variables from a git repo since .env files will be ignored, and gets the variables from Netlify.
+Using NodeJS, this file will create a snowpack.config.mjs file for you that has necessary settings to run snowpack and the build and start commands for local dev. It also serves as a place to store and use environmental variables (in Vue with Snowpack, using import.meta.env). This build step omits the environmental variables from a git repo since .env files will be ignored, and gets the variables from Netlify. Local dev uses your .env file and Netlify uses the internal environmental variables which you can enter in the UI.
 
 ### npm netlify
 
-This project was designed to run on Netlify, and this command will simply combine the build environment command with the build command.
+This project was designed to run on Netlify, and this command will simply combine the build environment command with the build command so you only need one command on Netlify.
 
 ## Setup
 
 ### Supabase
 
 Create a .env file and place your credentials. This will write out and expose your Supabase URL and API key in your code, but will allow you to not write it to Github.
-[See the Vue documentation](https://supabase.io/docs/guides/with-vue-3)
+[See the Supabase documentation for Vue](https://supabase.io/docs/guides/with-vue-3)
 
 ### The Movie Database
 
@@ -46,10 +46,10 @@ Hacker News allows unauthenticated requests to re-create the app from the Fireba
 
 For local development, you may wish to import your TMDB API key or token into your project from your environment. In the MovieDB.vue component, delete the Supabase call at the top of the script, and uncomment the data['TMDB'] line.
 
-In your .env file add each of the following:
-SUPABASE_URL=
-SUPABASE_ANON_KEY=
-TMDB_TOKEN=
+In your .env file add each of the following:  
+SUPABASE_URL=  
+SUPABASE_ANON_KEY=  
+TMDB_TOKEN=  
 
 Or you can include a TMDB_API_KEY= and include it at the end of your url. 
 
@@ -59,4 +59,4 @@ Delete the folder for external-api and rename the parent components, and this pr
 
 ### API keys and tokens
 
-I am using an approach for security around exposing API keys and tokens that includes rotating the keys themselves rather than securing them in the code base. This project is set up to not expose keys in Github, but does not keep them secret from client side code. A better approach would be to protect these keys using backend servers, or a hybrid combination of both approaches, especially for more sensitive data.
+The approach taken here for security around exposing API keys and tokens includes keeping track of and rotating the keys themselves rather than securing them in the code base. This project is set up to not expose keys in Github, and also allow easy updates to a rotated key without having to modify the project code. It does not keep keys secret from client side code. A better approach would be to protect these keys using backend servers, or a hybrid combination of both approaches, especially for more sensitive data.
