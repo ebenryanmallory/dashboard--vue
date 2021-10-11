@@ -1,10 +1,11 @@
 <template>
   <section class="bg-gray-100 p-4">
     <div class="container">
-      <p class="font-bold text-center uppercase">New Hacker News Stories</p>
+      <p class="font-bold text-center uppercase inter">Hacker News Stories</p>
       <ul>
-        <li :key="HN_article.id"> {{ HN_article.title }}
-          <a href="{{HN_article.url}}" :key="HN_article.id"> {{ HN_article.url }} </a>
+        <li :key="HN_article.id">
+          <p class="inter">{{ HN_article.title }}</p>
+          <a v-bind:href="HN_article.url" target="_blank">Read more</a>
         </li>
       </ul>
     </div>
@@ -25,3 +26,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .inter {
+    font-family: 'Inter'
+  }
+</style>

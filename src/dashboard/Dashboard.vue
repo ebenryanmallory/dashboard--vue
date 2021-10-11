@@ -42,10 +42,10 @@
 </template>
 
 <style scoped>
-.content-margin {
-  margin: 40px 0px 0px 255px;
-}
-.top-color {
-  z-index: -1;
-}
+  .content-margin {
+    margin: 40px 0px 0px 255px;
+  }
+  .top-color {
+    z-index: -1;
+  }
 </style>
