@@ -20,14 +20,10 @@
           toggleNews: function (classes) {
               this.newsClasses = classes;
               this.entertainmentClasses = 'hidden';
-              console.log(this.newsClasses)
-              console.log(this.entertainmentClasses)
           },
           toggleEntertainment: function (classes) {
               this.entertainmentClasses = classes;
               this.newsClasses = 'hidden';
-              console.log(this.newsClasses)
-              console.log(this.entertainmentClasses)
           }
         }
     };

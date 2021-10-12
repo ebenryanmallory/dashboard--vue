@@ -4,9 +4,9 @@
       <movies-db />
     </template>
     <template #fallback>
-      <div class="flex w-full">
-        <div class="loading bg-gray-300 shadow-sm w-half">hello</div>
-        <div class="loading bg-gray-300 shadow-sm w-half">hello</div>
+      <div class="flex w-full bg-gray-100 shadow-sm">
+        <div class="loading w-1/2 m-4 bg-gray-200"></div>
+        <div class="loading w-1/2 m-4 bg-gray-200"></div>
       </div>
     </template>
   </suspense>

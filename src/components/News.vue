@@ -4,9 +4,13 @@
       <hacker-news />
     </template>
     <template #fallback>
-      <div class="flex w-full">
-        <div class="loading bg-gray-300 shadow-sm w-half">hello</div>
-        <div class="loading bg-gray-300 shadow-sm w-half">hello</div>
+      <div class="flex flex-col w-full bg-gray-100 shadow-sm mt-16">
+        <div class="m-1 bg-gray-400" style="width: 150px; height: 30px;"></div>
+        <div class="loading m-1 bg-gray-200"></div>
+        <div class="loading m-1 bg-gray-300"></div>
+        <div class="loading m-1 bg-gray-200"></div>
+        <div class="loading m-1 bg-gray-300"></div>
+        <div class="loading m-1 bg-gray-200"></div>
       </div>
     </template>
   </suspense>
@@ -24,6 +28,6 @@ export default {
 
 <style scoped>
   .loading {
-    min-height: 265px;
+    min-height: 75px;
   }
 </style>
