@@ -9,8 +9,15 @@
     }
   };
 </script>
+
 <template>
   <div>
     <dashboard />
   </div>
 </template>
+
+<style>
+  .inter {
+    font-family: 'Inter'
+  }
+</style>

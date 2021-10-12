@@ -35,8 +35,8 @@
         name: "Sidebar",
         data() {
             return {
-                toggleNewsClasses: "",
-                toggleEntertainmentClasses: "",
+                newsClasses: "",
+                entertainmentClasses: "",
             };
         },
         methods: {

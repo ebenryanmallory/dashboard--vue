@@ -5,8 +5,8 @@
     </template>
     <template #fallback>
       <div class="flex w-full">
-        <div class="loading bg-gray-100 w-half"></div>
-        <div class="loading bg-gray-100 w-half"></div>
+        <div class="loading bg-gray-300 shadow-sm w-half">hello</div>
+        <div class="loading bg-gray-300 shadow-sm w-half">hello</div>
       </div>
     </template>
   </suspense>

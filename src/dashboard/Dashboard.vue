@@ -6,8 +6,8 @@
     export default {
       data() {
         return {
-          toggleNewsClasses: "",
-          toggleEntertainmentClasses: "",
+          newsClasses: "",
+          entertainmentClasses: "",
         };
       },
       components: {
@@ -18,10 +18,16 @@
       },
       methods: {
           toggleNews: function (classes) {
-              this.toggleNewsClasses = classes;
+              this.newsClasses = classes;
+              this.entertainmentClasses = 'hidden';
+              console.log(this.newsClasses)
+              console.log(this.entertainmentClasses)
           },
           toggleEntertainment: function (classes) {
-              this.toggleEntertainmentClasses = classes;
+              this.entertainmentClasses = classes;
+              this.newsClasses = 'hidden';
+              console.log(this.newsClasses)
+              console.log(this.entertainmentClasses)
           }
         }
     };
@@ -31,11 +37,11 @@
   <div class="p-8">
     <div class="absolute bg-purple-500 h-96 w-full top-color"></div>
     <topbar />
-    <sidebar @toggleNews="toggleNews" />
-    <div v-bind:class="toggleNewsClasses" class="content-margin">
+    <sidebar @toggleNews="toggleNews" @toggleEntertainment="toggleEntertainment" />
+    <div v-bind:class="newsClasses" class="content-margin">
       <news />
     </div>
-    <div v-bind:class="toggleEntertainmentClasses" class="content-margin">
+    <div v-bind:class="entertainmentClasses" class="content-margin">
       <entertainment />
     </div>
   </div>

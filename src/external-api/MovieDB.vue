@@ -1,8 +1,8 @@
 <template>
-  <section class="bg-gray-100 p-4">
+  <section class="bg-gray-100 p-4 shadow">
     <ul>
-      <li>
-        <div class="flex my-4" v-for="movie in movies" :key="movie.id">
+      <li v-for="movie in movies" :key="movie.id">
+        <div class="flex my-4">
           <img v-bind:src="baseImageURL + movie.poster_path" 
             class="max-w-half max-h-96 mr-4" 
             alt="dynamic movie poster" />
@@ -12,6 +12,7 @@
             <p class="mb-2"> Year: {{ movie.release_date.slice(0,4) }} </p>
           </div>
         </div>
+        <hr />
       </li>
     </ul>
   </section>
@@ -50,8 +51,5 @@
 <style scoped>
   .column {
     flex-direction: column;
-  }
-  .inter {
-    font-family: 'Inter'
   }
 </style>

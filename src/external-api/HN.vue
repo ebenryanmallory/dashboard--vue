@@ -1,11 +1,12 @@
 <template>
-  <section class="bg-gray-100 p-4 mt-16">
+  <section class="bg-gray-100 p-4 mt-16 shadow">
     <div class="container">
-      <p class="font-bold text-center uppercase inter">Hacker News Stories</p>
+      <p class="font-bold uppercase inter mb-4">Hacker News Stories</p>
       <ul>
-        <li v-for="(story, index) in stories" :key="index">
+        <li v-for="(story, index) in stories" :key="index" class="border border-gray-200 shadow my-1 p-2">
           <p class="inter">{{ story.title }}</p>
           <a v-bind:href="story.url" target="_blank">Go to source</a>
+          <div class="inline mx-4 text-right">Submitted by: {{ story.by }}</div>
         </li>
       </ul>
     </div>
@@ -31,9 +32,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  .inter {
-    font-family: 'Inter'
-  }
-</style>
