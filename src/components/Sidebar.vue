@@ -1,8 +1,40 @@
+<script>
+    export default {
+        name: "Sidebar",
+        data() {
+            return {
+                newsClasses: "",
+                entertainmentClasses: "",
+            };
+        },
+        methods: {
+            toggleNews: function (classes) {
+               this.$emit('toggleNews', classes);
+            },
+            toggleEntertainment: function (classes) {
+               this.$emit('toggleEntertainment', classes);
+            }
+        }
+    };
+    import '@shoelace-style/shoelace/dist/components/badge/badge.js';
+    import '@shoelace-style/shoelace/dist/components/alert/alert.js';
+</script>
+
 <template>
     <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
         <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
             <p class="font-bold text-center uppercase inter">News & Entertainment</p>
-            <p>Yep, all you really need in life is right here. Enjoy.</p>
+            <sl-badge><a href="https://shoelace.style/" target="_blank">Now with Shoelace</a></sl-badge>
+            <sl-alert type="primary" open>
+                <sl-icon slot="icon" name="check2-circle"></sl-icon>
+                <strong>Yep.</strong><br>
+                All you really need in life is right here. Enjoy.
+            </sl-alert>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <hr />
             <ul class="items-center flex flex-wrap list-none">
                 <li class="inline-block relative w-full">
@@ -29,26 +61,6 @@
         </div>
     </nav>
 </template>
-
-<script>
-    export default {
-        name: "Sidebar",
-        data() {
-            return {
-                newsClasses: "",
-                entertainmentClasses: "",
-            };
-        },
-        methods: {
-            toggleNews: function (classes) {
-               this.$emit('toggleNews', classes);
-            },
-            toggleEntertainment: function (classes) {
-               this.$emit('toggleEntertainment', classes);
-            }
-        }
-    };
-</script>
 
 <style scoped>
   .inter {

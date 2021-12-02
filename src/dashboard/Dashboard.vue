@@ -17,16 +17,17 @@
         Entertainment
       },
       methods: {
-          toggleNews: function (classes) {
-              this.newsClasses = classes;
-              this.entertainmentClasses = 'hidden';
-          },
-          toggleEntertainment: function (classes) {
-              this.entertainmentClasses = classes;
-              this.newsClasses = 'hidden';
-          }
+        toggleNews: function (classes) {
+            this.newsClasses = classes;
+            this.entertainmentClasses = 'hidden';
+        },
+        toggleEntertainment: function (classes) {
+            this.entertainmentClasses = classes;
+            this.newsClasses = 'hidden';
         }
+      }
     };
+
 </script>
 
 <template>
