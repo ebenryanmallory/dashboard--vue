@@ -33,12 +33,11 @@
     async setup() {
       let response_key = await fetch('https://movie-recommendations-demo-api.up.railway.app/');
       let response_key_json = await response_key.json();
-      console.log(response_key_json)
       const baseURL = 'https://api.themoviedb.org/4';
       const response_list = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc`,
         {
           headers: {
-            'Authorization': `Bearer ${responseJSON['TMDB']}`,
+            'Authorization': `Bearer ${response_key_json['TMDB']}`,
             'Content-Type': 'application/json;charset=utf-8'
           },
         }
