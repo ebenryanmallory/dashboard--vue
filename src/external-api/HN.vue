@@ -18,7 +18,7 @@ export default {
   async setup() {
     const urlBase = 'https://hacker-news.firebaseio.com/v0';
     // topstories, newstories, beststories
-    const response_list = await fetch(`${urlBase}/newstories.json?print=pretty`); // returns list string[]
+    const response_list = await fetch(`${urlBase}/newstories.json?print=pretty`);
     const newHN = await response_list.json();
 
     const articles = await Promise.all(

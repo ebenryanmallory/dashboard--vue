@@ -25,13 +25,6 @@ Using NodeJS, this file will create a snowpack.config.mjs file for you that has 
 
 This project was designed to run on Netlify, and this command will simply combine the build environment command with the build command so you only need one command on Netlify.
 
-## Setup
-
-### Supabase
-
-Create a .env file and place your credentials. This will write out and expose your Supabase URL and API key in your code, but will allow you to not write it to Github.
-[See the Supabase documentation for Vue](https://supabase.io/docs/guides/with-vue-3)
-
 ### The Movie Database
 
 The Movie Database allows developers to make API calls using a credential obtained by creating an account and logging in.
@@ -44,14 +37,7 @@ Hacker News allows unauthenticated requests to re-create the app from the Fireba
 
 ### Local Development
 
-For local development, you may wish to import your TMDB API key or token into your project from your environment. In the MovieDB.vue component, delete the Supabase call at the top of the script, and uncomment the data['TMDB'] line.
-
-In your .env file add each of the following:  
-SUPABASE_URL=  
-SUPABASE_ANON_KEY=  
-TMDB_TOKEN=  
-
-Or you can include a TMDB_API_KEY= and include it at the end of your url. 
+For local development, you may wish to import your TMDB API key or token into your project from your environment. In the MovieDB.vue component, delete the API call at the top of the script, and uncomment the data['TMDB'] line.
 
 ### Dashboard custom feeds or user data
 

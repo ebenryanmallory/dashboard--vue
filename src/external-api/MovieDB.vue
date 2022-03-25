@@ -28,22 +28,17 @@
 </template>
 
 <script>
-  import { supabase } from "../supabase";
 
   export default {
     async setup() {
-      // const data['TMDB'] = import.meta.env.TMDB_TOKEN;
-      let { data, error, status } = await supabase
-        .from("Dashboards")
-        .select(`TMDB`)
-        .eq("id", 1)
-        .single()
-      if (error) { console.log(`Sorry, you may not have correct access to Supabase - status: ${status}`)};
+      let response_key = await fetch('https://movie-recommendations-demo-api.up.railway.app/');
+      let response_key_json = await response_key.json();
+      console.log(response_key_json)
       const baseURL = 'https://api.themoviedb.org/4';
       const response_list = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc`,
         {
           headers: {
-            'Authorization': `Bearer ${data['TMDB']}`,
+            'Authorization': `Bearer ${responseJSON['TMDB']}`,
             'Content-Type': 'application/json;charset=utf-8'
           },
         }
