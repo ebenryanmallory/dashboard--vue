@@ -3,7 +3,7 @@
     "start": "snowpack dev",
     "build": "snowpack build",
     "createConfig": "node createSnowpackConfig.js",
-    "netlify": "yarn createConfig && yarn build"
+    "cloudflare": "npm i && npm run createConfig && npm run build"
   },
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.2.0",
