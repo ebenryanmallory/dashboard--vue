@@ -3,3 +3,5 @@ build
 node_modules
 .env
 snowpack.config.mjs
+package-lock.json
+yarn.lock
