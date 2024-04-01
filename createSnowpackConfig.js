@@ -30,7 +30,7 @@ export default {
     tailwindConfig: './tailwind.config.js'
   },
   env: {
-    TMDB_TOKEN: ${process.env.TMDB_TOKEN},
+    TMDB_TOKEN: '${process.env.TMDB_TOKEN}',
   },
   buildOptions: {
     /* ... */
