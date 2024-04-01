@@ -29,6 +29,9 @@ export default {
   devOptions: {
     tailwindConfig: './tailwind.config.js'
   },
+  env: {
+    TMDB_TOKEN: ${process.env.TMDB_TOKEN},
+  },
   buildOptions: {
     /* ... */
   }

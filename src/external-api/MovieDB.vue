@@ -35,7 +35,7 @@
       const response_list = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc`,
         {
           headers: {
-            'Authorization': `Bearer ${process.env.TMDB_TOKEN}`,
+            'Authorization': `Bearer ${__SNOWPACK_ENV__.TMDB_TOKEN}`,
             'Content-Type': 'application/json;charset=utf-8'
           },
         }
