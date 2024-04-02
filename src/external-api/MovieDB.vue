@@ -33,7 +33,7 @@
     async setup() {
       const response_key = await fetch('https://pub-43bf897ba16d4c86bacb71c173906473.r2.dev/tmdb.txt');
       const response_key_text = await response_key.text();
-      const baseURL = 'https://api.themoviedb.org/4';
+      const baseURL = 'https://api.themoviedb.org/3';
       const response_list = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc&api_key=${response_key_text}`);
       const movielist = await response_list.json();
       return { movies: movielist.results.slice(0, 5) };
